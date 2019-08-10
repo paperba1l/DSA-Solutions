@@ -5,7 +5,7 @@ const int maxn =100+5;
 typedef pair<int, int> ii ;
 typedef pair<int, ii> iii ;
 priority_queue<iii, vector<iii>, greater<iii> > pq ;
-vector<iii> adj[maxn];
+vector<iii> adj[maxn];k
 
 int N, coins, roads;
 int main(){
