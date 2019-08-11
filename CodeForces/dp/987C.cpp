@@ -39,9 +39,13 @@ int main() {
     for (int i = 0; i < n; ++i) {
         for (int j = i + 1; j < n; ++j) {
             if (v[i].s < v[j].s) {
+
+                // calculating the dps
                 if (v[i].c + v[j].c < dp[j]) {
                     dp[j] = v[i].c + v[j].c;
                 }
+
+                // this is actual dp logic
                 if (dp[i] + v[j].c < ans) {
                     ans = dp[i] + v[j].c;
                 }
