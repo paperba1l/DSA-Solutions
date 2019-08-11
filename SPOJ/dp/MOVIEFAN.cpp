@@ -27,6 +27,10 @@ int main() {
             while(ptr <= i and st[ptr] + L <= st[i])
                 ++ptr;
 
+
+            /* sum[i-1] -- when ith element is not included 
+                sum[ptr-1] -- match all the subsets with which we can include ith element
+                +1 -- for single set with only ith element */
             sum[i] = (sum[i - 1] + sum[ptr - 1] + 1) % mod;
         }
         cout<<sum[N]<<endl;;
