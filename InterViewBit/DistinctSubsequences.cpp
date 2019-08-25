@@ -1,3 +1,8 @@
+/*
+Given two sequences A, B, count number of unique ways in sequence A, to form a subsequence that is identical to the sequence B.
+
+Subsequence : A subsequence of a string is a new string which is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (ie, “ACE” is a subsequence of “ABCDE” while “AEC” is not).
+*/
 int Solution::numDistinct(string A, string B) {
     int lena = A.length(), lenb = B.length();
     
