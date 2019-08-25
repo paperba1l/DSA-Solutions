@@ -43,7 +43,7 @@ void add(int a, int b, int diff) {
     }
 }
 
-// O(n^2) solution 
+// O(n^2) solution , gives TLE
 int main() {
 	int n, k;
 	cin>>n>>k;
