@@ -1,4 +1,10 @@
-// https://codeforces.com/contest/987/problem/C
+/**
+ *  @author:      skyhavoc
+ *  created:      20xx
+ *  https://codeforces.com/contest/987/problem/C
+ *  C. Three displays
+ *       
+**/
 #include <bits/stdc++.h>
 using namespace std;
  
