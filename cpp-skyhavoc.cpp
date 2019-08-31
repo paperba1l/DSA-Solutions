@@ -17,14 +17,13 @@ using namespace std;
 #define ischar(c)       (c>='a' && c<='z')
 #define isChar(c)       (c>='A' && c<='Z')
 #define fill(a,v)       memset(a, v, sizeof(x))
-#define bitcount                    __builtin_popcount
+#define bitcount        __builtin_popcount
 #define boostio         ios_base::sync_with_stdio(false); cin.tie(0);
 // Input macros
 #define s(n)            scanf("%d",&n)
 #define sc(n)           scanf("%c",&n)
 #define sl(n)           scanf("%lld",&n)
 #define sf(n)           scanf("%lf",&n)
-#define ss(n)           scanf("%s",n)
 
 typedef long long int ll;
 typedef unsigned long long ull;
