@@ -1,6 +1,6 @@
 /**
  *  @author:      skyhavoc
- *  created:      20xx
+ *  created:      2019
 **/
 #include<bits/stdc++.h>
 using namespace std;
@@ -11,42 +11,45 @@ using namespace std;
 #define mp              make_pair
 #define vi              vector<int>
 #define pii             pair<int, int>
-#define all(c)          c.begin(),c.end()
+#define all(v)          v.begin(),v.end()
 #define isnum(a)        (a>=48 && a<=57)
-#define ischar(a)       (a>='a' && a<='z')
-#define isChar(a)       (a>='A' && a<='Z')
-#define isdigit(a)      (ch>='0' && ch<='9')
-#define mset(x,v)       memset(x, v, sizeof(x))
+#define isdigit(ch)      (ch>='0' && ch<='9')
+#define ischar(c)       (c>='a' && c<='z')
+#define isChar(c)       (c>='A' && c<='Z')
+#define fill(a,v)       memset(a, v, sizeof(x))
+#define bitcount                    __builtin_popcount
 #define boostio         ios_base::sync_with_stdio(false); cin.tie(0);
+// Input macros
+#define s(n)            scanf("%d",&n)
+#define sc(n)           scanf("%c",&n)
+#define sl(n)           scanf("%lld",&n)
+#define sf(n)           scanf("%lf",&n)
+#define ss(n)           scanf("%s",n)
 
-typedef unsigned long long ull;
 typedef long long int ll;
-const long double eps   = 1e-9;
+typedef unsigned long long ull;
+const long double EPS   = 1e-9;
 const long double PI    = 3.14159265358979;
 inline int gcd(int a, int b) {return(b?gcd(b,a%b):a);}
 inline int lcm(int a, int b) {return a / gcd(a, b) * b;}
 inline int fpow(ll n, ll k, int p) {ll r = 1; for (; k; k >>= 1) {if (k & 1) r = r * n % p; n = n * n % p;} return r;}
 
-//int rrr[]={1,0,-1,0};int ccc[]={0,1,0,-1}; //4 Direction
-//int rrr[]={1,1,0,-1,-1,-1,0,1};int ccc[]={0,1,1,1,0,-1,-1,-1};//8 direction
-//int rrr[]={2,1,-1,-2,-2,-1,1,2};int ccc[]={1,2,2,1,-1,-2,-2,-1};//Knight Direction
-//int rrr[]={2,1,-1,-2,-1,1};int ccc[]={0,1,1,0,-1,-1}; //Hexagonal Direction
-//int month[]={31,28,31,30,31,30,31,31,30,31,30,31}; //month
-const ll mod    = 1e9+7;
-const ll maxn   = 5000;
-int dp[maxn];
-
-int count_1s(int n){ //__builtin_popcount();
+int count_1s(int n){
     int c=0;
     while(n){
         n=n&(n-1); c++;
     }return c;
 }
 
+const ll mod    = 1e9+7;
+const ll maxn   = 5000;
+int dp[maxn];
+
 int main() {
+    boostio;
+
     //freopen("input.in", "r", stdin);
     //freopen("output.txt", "w", stdout);
-    boostio;
     int tcs=1;
 
     //cin>>tcs;
@@ -56,5 +59,11 @@ int main() {
     
     return 0;
 }// skyhavoc        *2019
+
+//int rrr[]={1,0,-1,0};int ccc[]={0,1,0,-1}; //4 Direction
+//int rrr[]={1,1,0,-1,-1,-1,0,1};int ccc[]={0,1,1,1,0,-1,-1,-1};//8 direction
+//int rrr[]={2,1,-1,-2,-2,-1,1,2};int ccc[]={1,2,2,1,-1,-2,-2,-1};//Knight Direction
+//int rrr[]={2,1,-1,-2,-1,1};int ccc[]={0,1,1,0,-1,-1}; //Hexagonal Direction
+//int month[]={31,28,31,30,31,30,31,31,30,31,30,31}; //month
 
 
