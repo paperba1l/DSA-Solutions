@@ -19,3 +19,19 @@ int Solution::singleNumber(const vector<int> &a)
     }
     return ones;
 }
+
+/* // alternative
+int Solution::singleNumber(const vector<int> &a) {
+    int p2 = 1, ans = 0;
+    while(p2<1e9){
+        int  cnt = 0;
+        for(int i=0; i<a.size(); i++) {
+            if((a[i]&p2)==p2) cnt++;
+        }
+        ans += (cnt%3)*p2;
+        p2*=2;
+            
+    }
+    return ans;
+}
+*/
