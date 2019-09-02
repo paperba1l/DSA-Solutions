@@ -2,7 +2,14 @@
  *  @author:      skyhavoc
  *  created:      2019
 **/
+/*
+Given an array where every element occurs three times, except one element which occurs only once. Find the element that occurs once. Expected time complexity is O(n) and O(1) extra space.
+Input: arr[] = {12, 1, 12, 3, 12, 1, 1, 2, 3, 3}
+Output: 2
+In the given array all element appear three times except 2 which appears once.
+*/
 #include <bits/stdc++.h>
+using namespace std;
 using namespace std;
 #define ff first
 #define ss second
@@ -58,7 +65,7 @@ int count_1s(int n)
 
 const ll mod = 1e9 + 7;
 const ll maxn = 5000;
-int dp[maxn];
+int a[maxn];
 
 int main()
 {
@@ -68,9 +75,33 @@ int main()
     //freopen("output.txt", "w", stdout);
     int tcs = 1;
 
-    //cin>>tcs;
+    cin >> tcs;
     while (tcs--)
     {
+        int n;
+        cin >> n;
+
+        for (int i = 0; i < n; i++)
+        {
+            cin >> a[i];
+        }
+
+        int p2 = 1, cnt = 0, ans = 0;
+        while (p2 < 128)
+        {
+            cnt = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if ((a[i] & p2) == p2)
+                {
+                    cnt++;
+                }
+            }
+
+            ans += (cnt % 3) * p2;
+            p2 = p2 * 2;
+        }
+        cout << ans << endl;
     }
 
     return 0;
