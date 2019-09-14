@@ -1,7 +1,7 @@
 /**
  *  @author:      dnar
- *  https://codeforces.com/problemset/problem/835/C
- *  C. Star sky
+ *  https://codeforces.com/problemset/problem/777/C
+ *  C. Alyona and Spreadsheet
 **/
 #include <bits/stdc++.h>
 #define fi first
