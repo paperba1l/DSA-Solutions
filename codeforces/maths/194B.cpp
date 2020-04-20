@@ -1,6 +1,12 @@
 /**
  *  @author:      skyhavoc
  *  created:      2020
+ *  problem:      B. Square
+ *  link:         https://codeforces.com/problemset/problem/194/B
+**/
+/**
+ *  @author:      skyhavoc
+ *  created:      2020
 **/
 #include <bits/stdc++.h>
 using namespace std;
@@ -19,8 +25,8 @@ using namespace std;
 #define fill(vec, x) memset(vec, x, sizeof(vec))
 #define bitcount __builtin_popcount
 #define boostio                       \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(0);
+	ios_base::sync_with_stdio(false); \
+	cin.tie(0);
 // Input macros
 #define s(n) scanf("%d", &n)
 #define sc(n) scanf("%c", &n)
@@ -35,45 +41,55 @@ inline int gcd(int a, int b) { return (b ? gcd(b, a % b) : a); }
 inline int lcm(int a, int b) { return a / gcd(a, b) * b; }
 inline int fpow(ll n, ll k, int p)
 {
-    ll r = 1;
-    for (; k; k >>= 1)
-    {
-        if (k & 1)
-            r = r * n % p;
-        n = n * n % p;
-    }
-    return r;
+	ll r = 1;
+	for (; k; k >>= 1)
+	{
+		if (k & 1)
+			r = r * n % p;
+		n = n * n % p;
+	}
+	return r;
 }
 
 int count_1s(int n)
 {
-    int c = 0;
-    while (n)
-    {
-        n = n & (n - 1);
-        c++;
-    }
-    return c;
+	int c = 0;
+	while (n)
+	{
+		n = n & (n - 1);
+		c++;
+	}
+	return c;
 }
-
-const ll mod = 1e9 + 7;
-const ll maxn = 5000;
-int dp[maxn];
 
 int main()
 {
-    boostio;
+	boostio;
 
-    //freopen("input.in", "r", stdin);
-    //freopen("output.txt", "w", stdout);
-    int tcs = 1;
+	//freopen("input.in", "r", stdin);
+	//freopen("output.txt", "w", stdout);
+	int tcs = 1;
+	cin >> tcs;
 
-    //cin>>tcs;
-    while (tcs--)
-    {
-    }
+	while (tcs--)
+	{
+		ll n;
+		cin >> n;
 
-    return 0;
+		/*
+            we move in cricular fashion d = n+1 
+            after moving certain round we will comeback to original location
+            let say, we started from 0th position then after k rounds we come
+            back to same location (0 + k(n+1))%4n. we need to find the smallest value 
+            of k such that k(n+1) is the least multiple of 4n, that is lcm(4n, n+1)/(n+1)
+        */
+
+		ll hcf = __gcd(4 * n, n + 1);
+		ll lcm = (4 * n * (n + 1)) / hcf;
+		cout << lcm / (n + 1) + 1 << endl;
+	}
+
+	return 0;
 } // skyhavoc        *2020
 
 //int rrr[]={1,0,-1,0};int ccc[]={0,1,0,-1}; //4 Direction
