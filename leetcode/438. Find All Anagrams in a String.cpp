@@ -1,53 +1,55 @@
-class Solution
-{
-public:
-    int mpp[26], mps[26];
+vector Solution::insert(vector &intervals, Interval newInterval) {
+vector ans;
 
-    bool compare()
-    {
-        int flag = true;
+if(newInterval.end < newInterval.start){
+int t = newInterval.end;
+newInterval.end = newInterval.start;
+newInterval.start = t;
+}
+Interval temp;
+temp.start=-1;
+temp.end=-1;
+int done=0;
+for(int i=0;i<intervals.size();i++){
+if(!done){
+if(intervals[i].start <= newInterval.start){
+//case 4
+if(intervals[i].end <= newInterval.start){
+ans.push_back(intervals[i]);
+}
+else{
+//cout << “here1”<<endl;
+temp.start = intervals[i].start;
+}
+}
 
-        for (int i = 0; i < 26; i++)
-        {
-            if (mpp[i] == 0)
-                continue;
-
-            if (mpp[i] != mps[i])
-            {
-                flag = false;
-                break;
-            }
-        }
-        return flag;
-    }
-    vector<int> findAnagrams(string s, string p)
-    {
-        int len1 = s.length(), len2 = p.length();
-        vector<int> ans;
-
-        if (len2 > len1)
-            return ans;
-
-        for (int i = 0; i < len2; i++)
-        {
-            mpp[(int)(p[i] - 'a')]++;
-            mps[(int)(s[i] - 'a')]++;
-        }
-
-        if (compare())
-            ans.push_back(0);
-
-        for (int i = len2; i < len1; i++)
-        {
-            mps[(int)(s[i - len2] - 'a')]--;
-            mps[(int)(s[i] - 'a')]++;
-
-            if (compare())
-            {
-                ans.push_back(i - len2 + 1);
-            }
-        }
-
-        return ans;
-    }
-};
+     else if(intervals[i].start > newInterval.start){
+         if(temp.start==-1)
+             temp.start = newInterval.start;
+         if(newInterval.end < intervals[i].start){
+             temp.end = newInterval.end;
+             ans.push_back(temp);
+             done=1;
+             ans.push_back(intervals[i]);
+         }
+         else if(newInterval.end <= intervals[i].end){
+             temp.end = intervals[i].end;
+             ans.push_back(temp);
+             done=1;
+         }
+     }
+ }
+ else{
+     ans.push_back(intervals[i]);
+ }
+}
+if(!done){
+if(temp.start!=-1){
+temp.end=newInterval.end;
+ans.push_back(temp);
+}
+else
+ans.push_back(newInterval);
+}
+return ans;
+}
