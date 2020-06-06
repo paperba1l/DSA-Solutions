@@ -5,26 +5,31 @@
 **/
 void Solution::sortColors(vector<int> &a)
 {
-    int n = a.size();
+    // Do not write main() function.
+    // Do not read input, instead use the arguments to the function.
+    // Do not print the output, instead return values as specified
+    // Still have a doubt. Checkout www.interviewbit.com/pages/sample_codes/ for more details
+    int len = a.size();
+    int l = 0, curr = 0, r = len - 1;
+    if (len <= 1)
+        return;
 
-    int idx_0 = 0, idx_2 = n - 1, i = 0;
-    while (i <= idx_2)
+    while (curr <= r)
     {
-        if (a[i] == 0)
+        if (a[curr] == 1)
         {
-            swap(a[i], a[idx_0]);
-            idx_0++;
-            i++;
+            curr++;
         }
-        else if (a[i] == 1)
+        else if (a[curr] == 0)
         {
-            i++;
+            swap(a[curr], a[l]);
+            l++;
+            curr++;
         }
         else
         {
-            swap(a[i], a[idx_2]);
-            idx_2--;
+            swap(a[curr], a[r]);
+            r--;
         }
     }
 }
-// 0 1 2 0 1 2]
