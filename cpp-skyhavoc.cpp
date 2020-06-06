@@ -1,6 +1,6 @@
 /**
  *  @author:      skyhavoc
- *  created:      2020
+ *  @year:        2020
 **/
 #include <bits/stdc++.h>
 using namespace std;
@@ -33,28 +33,6 @@ const long double EPS = 1e-9;
 const long double PI = 3.14159265358979;
 inline int gcd(int a, int b) { return (b ? gcd(b, a % b) : a); }
 inline int lcm(int a, int b) { return a / gcd(a, b) * b; }
-inline int fpow(ll n, ll k, int p)
-{
-    ll r = 1;
-    for (; k; k >>= 1)
-    {
-        if (k & 1)
-            r = r * n % p;
-        n = n * n % p;
-    }
-    return r;
-}
-
-int count_1s(int n)
-{
-    int c = 0;
-    while (n)
-    {
-        n = n & (n - 1);
-        c++;
-    }
-    return c;
-}
 
 const ll mod = 1e9 + 7;
 const ll maxn = 5000;
@@ -74,10 +52,9 @@ int main()
     }
 
     return 0;
-} // skyhavoc        *2020
+} // skyhavoc
 
 //int rrr[]={1,0,-1,0};int ccc[]={0,1,0,-1}; //4 Direction
 //int rrr[]={1,1,0,-1,-1,-1,0,1};int ccc[]={0,1,1,1,0,-1,-1,-1};//8 direction
 //int rrr[]={2,1,-1,-2,-2,-1,1,2};int ccc[]={1,2,2,1,-1,-2,-2,-1};//Knight Direction
-//int rrr[]={2,1,-1,-2,-1,1};int ccc[]={0,1,1,0,-1,-1}; //Hexagonal Direction
 //int month[]={31,28,31,30,31,30,31,31,30,31,30,31}; //month
