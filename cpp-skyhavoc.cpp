@@ -12,8 +12,6 @@ using namespace std;
 #define vi vector<int>
 #define pii pair<int, int>
 #define all(vec) vec.begin(), vec.end()
-#define isnum(dig) (dig >= 48 && dig <= 57)
-#define isdigit(ch) (ch >= '0' && ch <= '9')
 #define ischar(ch) (ch >= 'a' && ch <= 'z')
 #define isChar(ch) (ch >= 'A' && ch <= 'Z')
 #define fill(vec, x) memset(vec, x, sizeof(vec))
