@@ -15,12 +15,11 @@ using namespace std;
 #define ischar(ch) (ch >= 'a' && ch <= 'z')
 #define isChar(ch) (ch >= 'A' && ch <= 'Z')
 #define fill(vec, x) memset(vec, x, sizeof(vec))
-#define bitcount __builtin_popcount
 #define boostio                       \
     ios_base::sync_with_stdio(false); \
     cin.tie(0);
 // Input macros
-#define s(n) scanf("%d", &n)
+#define si(n) scanf("%d", &n)
 #define sc(n) scanf("%c", &n)
 #define sl(n) scanf("%lld", &n)
 #define sf(n) scanf("%lf", &n)
@@ -34,7 +33,6 @@ inline int lcm(int a, int b) { return a / gcd(a, b) * b; }
 
 const ll mod = 1e9 + 7;
 const ll maxn = 5000;
-int dp[maxn];
 
 int main()
 {
