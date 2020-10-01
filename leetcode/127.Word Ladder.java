@@ -1,6 +1,8 @@
 /**
- * @author: ATRI2107 created: 2020 problem: Leetcode 127 Word Ladder link:
- *          https://leetcode.com/problems/word-ladder/
+ * @author: ATRI2107 
+ * created: 2020 
+ * problem: Leetcode 127 Word Ladder 
+ * link: https://leetcode.com/problems/word-ladder/
  **/
 class Solution {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
