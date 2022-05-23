@@ -1,6 +1,6 @@
 /**
- *  @author:      skyhavoc
- *  @year:        2020
+ *  @author:      paperba1l
+ *  @year:        2022
 **/
 #include <bits/stdc++.h>
 using namespace std;
@@ -37,9 +37,6 @@ const ll maxn = 5000;
 int main()
 {
     boostio;
-
-    //freopen("input.in", "r", stdin);
-    //freopen("output.txt", "w", stdout);
     int tcs = 1;
 
     //cin>>tcs;
@@ -48,7 +45,7 @@ int main()
     }
 
     return 0;
-} // skyhavoc
+}
 
 //int rrr[]={1,0,-1,0};int ccc[]={0,1,0,-1}; //4 Direction
 //int rrr[]={1,1,0,-1,-1,-1,0,1};int ccc[]={0,1,1,1,0,-1,-1,-1};//8 direction
