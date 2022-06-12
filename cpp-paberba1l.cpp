@@ -1,6 +1,5 @@
 /**
  *  @author:      paperba1l
- *  @year:        2022
 **/
 #include <bits/stdc++.h>
 using namespace std;
@@ -34,14 +33,19 @@ inline int lcm(int a, int b) { return a / gcd(a, b) * b; }
 const ll mod = 1e9 + 7;
 const ll maxn = 5000;
 
+void solve() {
+    
+    return;
+}
 int main()
 {
     boostio;
     int tcs = 1;
 
-    //cin>>tcs;
+    // cin>>tcs;
     while (tcs--)
     {
+        solve();
     }
 
     return 0;
